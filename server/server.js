@@ -30,7 +30,7 @@ app.get("/api/v1/restaurants", async (req, res) => {
 // Getting one restaurant
 app.get("/api/v1/restaurants/:id", async (req, res) => {
   try {
-    const results = await db.query("select * from restaurant where id = $1", [
+    const results = await db.query("select * from restaurants where id = $1", [
       req.params.id,
     ]);
     res.status(200).json({
